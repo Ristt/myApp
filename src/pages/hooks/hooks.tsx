@@ -1,28 +1,17 @@
-import { useState } from '@tarojs/taro';
-import { connect } from 'dva';
-import { Dispatch } from 'redux';
-import { View, Text, Button } from '@tarojs/components';
-import styles from './hooks.less';
+import Taro, { useState } from '@tarojs/taro';
+import { connect } from '@tarojs/redux';
+import { View } from '@tarojs/components';
 
-interface IPropsType {
-  dispatch: Dispatch<any>;
+import './hooks.less';
+interface TypeProps {
   demoStr: string;
 }
 
-function TextInputWithFocusButton() {
-  // const inputEl = useRef(null);
-  const onButtonClick = () => {
-    // `current` 指向已挂载到 DOM 上的文本输入元素
-    // inputEl.current.focus();
-  };
-  return (
-    <View>
-      {/* <Input ref={inputEl} type="text" /> */}
-      <Button onClick={onButtonClick}>Focus the input</Button>
-    </View>
-  );
+function Index(props: TypeProps) {
+  const { demoStr = '' } = props;
+  return <View className="index">{demoStr}</View>;
 }
 export default connect(({ demo }) => {
-  const { demoStr } = demo;
+  const { demoStr = 'ddd' } = demo;
   return { demoStr };
-})(TextInputWithFocusButton);
+})(Index);
