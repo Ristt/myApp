@@ -39,7 +39,7 @@
     "dva-core": "^1.4.0",
     "dva-loading": "^3.0.6",
     "immutability-helper": "^3.0.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nerv-devtools": "^1.4.0",
     "nervjs": "^1.4.0",
     "redux-logger": "^3.0.6"
